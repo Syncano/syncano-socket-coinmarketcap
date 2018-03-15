@@ -1,0 +1,147 @@
+name: coinmarketcap
+description: Description of coinmarketcap
+version: 0.0.1
+runtime: nodejs_v8
+keywords:
+  - hello
+  - world
+
+endpoints:
+  ticker:
+    description: Hello world!
+    inputs:
+      properties:
+        start:
+          type: integer
+          description: return results from rank [start] and above
+          examples:
+            - 10
+        limit:
+          type: integer
+          description: return a maximum of [limit] results (default is 100, use 0 to return all results)
+          examples:
+            - 100
+        convert:
+          type: string
+          description: return price, 24h volume, and market cap in terms of another currency.
+          long_description: |
+            Valid values are "AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "CZK", "DKK", "EUR", "GBP", "HKD",
+            "HUF", "IDR", "ILS", "INR", "JPY", "KRW", "MXN", "MYR", "NOK", "NZD", "PHP", "PKR", "PLN",
+            "RUB", "SEK", "SGD", "THB", "TRY", "TWD", "ZAR"
+          examples:
+            - EUR
+    outputs:
+      success:
+        description: Success
+        required:
+          - message
+        properties:
+          message:
+            description: Hello message
+            examples:
+              - |
+                {
+                  "message": "Hello Tyler Durden!"
+                }
+      fail:
+        exit_code: 400
+        description: Failed
+        required:
+          - message
+        properties:
+          message:
+            description: Error message
+            examples:
+              - |
+                {
+                  "message": "You have to send "firstname" and "lastname" arguments!"
+                }
+  
+  ticker-by-currency:
+    description: Hello world!
+    inputs:
+      required:
+        - id
+        - convert
+      properties:
+        id:
+          type: string
+          description: First
+          examples:
+            - bitcoin
+        convert:
+          type: string
+          description: return price, 24h volume, and market cap in terms of another currency.
+          long_description: |
+            Valid values are "AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "CZK", "DKK", "EUR", "GBP", "HKD",
+            "HUF", "IDR", "ILS", "INR", "JPY", "KRW", "MXN", "MYR", "NOK", "NZD", "PHP", "PKR", "PLN",
+            "RUB", "SEK", "SGD", "THB", "TRY", "TWD", "ZAR"
+          examples:
+            - EUR
+    outputs:
+      success:
+        description: Success
+        required:
+          - message
+        properties:
+          message:
+            description: Hello message
+            examples:
+              - |
+                {
+                  "message": "Hello Tyler Durden!"
+                }
+      fail:
+        exit_code: 400
+        description: Failed
+        required:
+          - message
+        properties:
+          message:
+            description: Error message
+            examples:
+              - |
+                {
+                  "message": "You have to send "firstname" and "lastname" arguments!"
+                }
+                  
+  global:
+    description: Hello world!
+    inputs:
+      properties:
+        convert:
+          type: string
+          description: return price, 24h volume, and market cap in terms of another currency.
+          long_description: |
+            Valid values are "AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "CZK", "DKK", "EUR", "GBP", "HKD",
+            "HUF", "IDR", "ILS", "INR", "JPY", "KRW", "MXN", "MYR", "NOK", "NZD", "PHP", "PKR", "PLN",
+            "RUB", "SEK", "SGD", "THB", "TRY", "TWD", "ZAR"
+          examples:
+            - EUR
+    outputs:
+      success:
+        description: Success
+        required:
+          - message
+        properties:
+          message:
+            description: Hello message
+            examples:
+              - |
+                {
+                  "message": "Hello Tyler Durden!"
+                }
+      fail:
+        exit_code: 400
+        description: Failed
+        required:
+          - message
+        properties:
+          message:
+            description: Error message
+            examples:
+              - |
+                {
+                  "message": "You have to send "firstname" and "lastname" arguments!"
+                }
+
