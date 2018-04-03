@@ -19,7 +19,7 @@ describe('RETURNS OVERVIEW OF THE STATE OF THE CRYPTOCURRENCY MARKET', () => {
     };
     meta.request.REQUEST_METHOD = 'GET';
     const { data: { argError } } = await run('ticker', { args, meta });
-    expect(argError).to.equal('You can only use the optional value(s) listed in ticker method. Check https://coinmarketcap.com/api/ for more information.');
+    expect(argError).to.equal('You can only use the value(s) listed in ticker method. Check https://coinmarketcap.com/api/ for more information.');
   });
 
   it('returns an Array of data when ticker is successful', async () => {
@@ -46,7 +46,7 @@ describe('RETURNS OVERVIEW OF THE STATE OF THE CRYPTOCURRENCY MARKET', () => {
     expect(data).to.be.an.instanceof(Array);
   });
 
-  it('returns an Array of data when global is successful', async () => {
+  it('returns an Object of data when global is successful', async () => {
     meta = generateMeta('global');
     args = {
       convert: 'NOK',

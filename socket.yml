@@ -4,8 +4,9 @@ version: 0.0.1
 runtime: nodejs_v8
 keywords:
   - ticker
-  - ticker-by-currency
   - global
+  - currency
+  - crypto
 
 endpoints:
   ticker:
@@ -62,7 +63,7 @@ endpoints:
                 }
   
   ticker-by-currency:
-    description: Displays current prices of crypto coins based on id(a.k.a. currency)
+    description: Displays current prices of crypto coins based on id (a.k.a. currency)
     inputs:
       required:
         - id
@@ -119,7 +120,7 @@ endpoints:
       properties:
         convert:
           type: string
-          description: return price, 24h volume, and market cap in terms of another currency.
+          description: return 24h volume, and market cap in terms of another currency.
           long_description: |
             Valid values are "AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "CZK", "DKK", "EUR", "GBP", "HKD",
             "HUF", "IDR", "ILS", "INR", "JPY", "KRW", "MXN", "MYR", "NOK", "NZD", "PHP", "PKR", "PLN",
@@ -154,4 +155,3 @@ endpoints:
                 {
                   "argError": "You can only use the optional value(s) listed in ticker method. Check https://coinmarketcap.com/api/ for more information."
                 }
-
