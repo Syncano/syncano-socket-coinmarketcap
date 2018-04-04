@@ -1,0 +1,48 @@
+{
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run build:src && npm run build:env",
+    "build:src": "sh ./bin/compile",
+    "build:env": "sh ./bin/compile-env",
+    "test": "mocha --compilers js:babel-core/register test/*.js --timeout 15000"
+  },
+  "dependencies": {
+    "@syncano/cli": "^0.11.0",
+    "@syncano/core": "latest",
+    "@syncano/test": "^0.11.0",
+    "@syncano/validate": "^0.11.0",
+    "axios": "^0.18.0",
+    "chai": "^4.1.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "eslint": "^4.11.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-chai-friendly": "^0.4.0",
+    "eslint-plugin-import": "^2.8.0",
+    "mocha": "^4.0.1",
+    "prettier-eslint": "^8.2.2",
+    "syncano-socket-readme-generator": "^1.0.0"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "8"
+          }
+        }
+      ]
+    ],
+    "plugins": [
+      "transform-object-rest-spread"
+    ]
+  }
+}
