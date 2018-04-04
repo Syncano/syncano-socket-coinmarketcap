@@ -2,7 +2,7 @@ name: coinmarketcap
 description: >-
   Integrates coinmarketcap for tracking capitalization of various
   cryptocurrencies.
-version: 0.0.2
+version: 0.0.3
 runtime: nodejs_v8
 keywords:
   - ticker
